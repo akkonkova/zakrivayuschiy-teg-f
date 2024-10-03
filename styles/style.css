@@ -14,6 +14,8 @@
 
 */
 
+/* Общие стили для страницы*/
+
 .page {
   color: var(--primary-clr);
   font-family: var(--primary-font), sans-serif;
@@ -25,6 +27,14 @@
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--reg-font-weight);
 }
+
+.content-section {
+  margin-inline: auto;
+  inline-size: var(--content-sec-size, min(100%, 698px));
+}
+
+/* Стили для шапки сайта */
+
 .header {
   display: flex;
   flex-direction: column;
@@ -36,11 +46,6 @@
   background: var(--primary-bg-clr);
 }
 
-.content-section {
-  margin-inline: auto;
-  inline-size: var(--content-sec-size, min(100%, 698px));
-}
-
 .header__container {
   display: flex;
   flex-direction: column;
@@ -49,14 +54,14 @@
 }
 
 .header__logo {
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .header__title {
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
@@ -74,20 +79,22 @@
   border: none;
   padding-inline-start: 22px;
   padding-block: 0;
-  outline: 1px solid transparent;
+  outline: none;
   color: currentColor;
   font-family: var(--accent-font, monospace);
   font-weight: var(--reg-font-weight);
   font-size: var(--secondary-font-size);
   text-transform: uppercase;
   background: transparent;
+  transition: all .3s ease;
   cursor: pointer;
   min-block-size: 14px;
+  will-change: opacity, transform;
 }
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: 0.2s;
+  transition: opacity .3s ease;
   pointer-events: none;
 }
 
@@ -96,12 +103,45 @@
   position: absolute;
   inset-inline-start: 2px;
   inset-block-start: 0;
+  animation: arrow 0.5s infinite ease-in-out alternate;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: 0.2s;
+  transition: opacity .3s ease;
 }
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+  transition: opacity .3s ease;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  background: var(--primary-clr);
+  transition: transform .3s ease;
+  transform: scaleX(0);
+  transform-origin: left center;
+  block-size: 2px;
+}
+
+.theme-menu__button:focus-visible::after {
+  content: '';
+  display: block;
+  opacity: 0.6;
+  background: var(--primary-clr);
+  transition: transform .3s ease;
+  transform: scaleX(1);
+  block-size: 2px;
+}
+
+/* Стили для секции с карточками / статьями */
 
 .card-section {
   display: flex;
@@ -223,6 +263,8 @@
   line-height: 90%;
 }
 
+/* Стили для секции с кнопкой сохранения*/
+
 .save__button-container {
   display: flex;
   justify-content: center;
@@ -254,3 +296,4 @@
     height: 28px;
   }
 }
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Страница про путь обучения вёрстке, который был пройден к проекту Закрывающий тег"
+    />
+    <meta property="og:title" content="Закрывающий тег" />
+    <meta
+      property="og:description"
+      content="Страница про путь обучения вёрстке, который был пройден к проекту Закрывающий тег"
+    />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png" type="image/png" />
+    <title>Закрывающий тег</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
+    <script src="./scripts/set-theme.js"></script>
+  </head>
+  <body class="page">
+    <header class="header content-section">
+      <div class="header__container">
+        <a href="#0" class="header__logo">&lt;/html&gt;</a>
+        <h1 class="header__title">закрывающий тег</h1>
+      </div>
+      <nav class="theme-menu header__theme-menu">
+        <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
+        <ul class="theme-menu__list">
+          <li class="theme-menu__item">
+            <button type="button" data-theme="dark" class="theme-menu__button">Темно</button>
+          </li>
+          <li class="theme-menu__item">
+            <button type="button" data-theme="auto" disabled class="theme-menu__button">
+              Авто
+            </button>
+          </li>
+          <li class="theme-menu__item">
+            <button type="button" data-theme="light" class="theme-menu__button">Светло</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="card-section content-section">
+        <article class="card">
+          <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
+          <div class="card__pic-container">
+            <picture>
+              <source srcset="./images/car.avif" type="image/avif" />
+              <source srcset="./images/car.webp" type="image/webp" />
+              <img
+                class="card__pic"
+                src="./images/car.jpg"
+                alt="Цветной автобус в стиле хиппи"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <div class="card__text-container">
+            <p class="card__text">
+              Это было самое начало пути. На этом этапе важно было проникнуться основами и
+              настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше
+              будущее.
+            </p>
+            <p class="card__text">Место для ваших воспоминаний о начале обучения.</p>
+          </div>
+          <div class="card__button-container">
+            <button class="button card__icon-button" type="button">
+              <img src="./svg/heart.svg" alt="Иконка в виде сердца" class="like-icon">
+            </button>
+            <button class="button card__like-button" type="button">
+              <span class="button__text">Like</span>
+            </button>
+          </div>
+        </article>
+      </section>
+      <div class="save__button-container content-section">
+        <button class="button save__button" type="button">
+          <img src="./svg/floppy.svg" alt="floppy icon" class="floppy-icon">
+          <span class="button__text">Сохранить на память</span>
+        </button>
+      </div>
+    </main>
+    <script src="./scripts/like.js"></script>
+  </body>
+</html>

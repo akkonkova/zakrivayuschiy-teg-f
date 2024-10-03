@@ -220,7 +220,13 @@
 }
 
 .floppy-icon {
-  display: block;
-  inline-size: 21px;
-  block-size: 21px;
+  width: 21px;
+  height: 21px;
+}
+
+@media (width <= 375px) {
+  .floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
 }

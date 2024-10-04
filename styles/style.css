@@ -30,7 +30,7 @@
 
 .content-section {
   margin-inline: auto;
-  inline-size: var(--content-sec-size, min(100%, 698px));
+  inline-size: var(--content-sec-size, min(100%, 700px));
 }
 
 /* Стили для шапки сайта */
@@ -40,9 +40,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: 102px;
+  margin-block-start: 100px;
   border: var(--primary-border);
-  padding-block-start: clamp(120px, 9.25vw, 136px);
+  padding-block-start: clamp(120px, 114.3662px + 1.5023vw, 136px);
   background: var(--primary-bg-clr);
 }
 
@@ -51,18 +51,19 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding-block-end: 24px;
 }
 
 .header__logo {
   font-family: var(--accent-font);
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-size: clamp(49px, 43.3662px + 1.5023vw, 65px);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .header__title {
   font-family: var(--accent-font);
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-size: clamp(14px, 10.831px + 0.8451vw, 23px);
   text-transform: uppercase;
 }
 
@@ -71,17 +72,17 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding-block: 23px;
+  padding-block-end: 20px;
 }
 
 .theme-menu__button {
   position: relative;
   border: none;
-  padding-inline-start: 22px;
+  padding-inline-start: 24px;
   padding-block: 0;
   outline: none;
   color: currentColor;
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font);
   font-weight: var(--reg-font-weight);
   font-size: var(--secondary-font-size);
   text-transform: uppercase;
@@ -102,7 +103,7 @@
   content: '▶';
   position: absolute;
   inset-inline-start: 2px;
-  inset-block-start: 0;
+  inset-block-start: 1px;
   animation: arrow 0.5s infinite ease-in-out alternate;
 }
 
@@ -148,6 +149,7 @@
   flex-direction: column;
   gap: 50px;
   margin-block-start: 100px;
+  margin-block-end: 50px;
 }
 
 .card {
@@ -161,7 +163,7 @@
   display: flex;
   flex-direction: column;
   padding-inline: 10px;
-  padding-block: 4px 4px;
+  padding-block: 5px;
   color: var(--primary-clr);
   font-family: inherit;
   font-weight: var(--title-font-weight);
@@ -173,7 +175,7 @@
   position: relative;
   border-block: var(--primary-border);
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
 }
 
 .card__pic {
@@ -193,8 +195,8 @@
   text-transform: uppercase;
   text-shadow: -1px 0 var(--label-stroke-clr), 0 1px var(--label-stroke-clr),
     1px 0 var(--label-stroke-clr), 0 -1px var(--label-stroke-clr);
-  inset-inline-end: 25px;
-  inset-block-start: 25px;
+  inset-inline-end: clamp(11px, 6.0704px + 1.3146vw, 25px);
+  inset-block-start: clamp(23px, 22.2958px + 0.1878vw, 25px);
   mix-blend-mode: hard-light;
 }
 
@@ -211,9 +213,9 @@
 .card__text-container {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 27px;
   padding-inline: 25px;
-  padding-block: 31px 27px;
+  padding-block: 26px;
 }
 
 .card__text {
@@ -227,7 +229,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   padding-inline-end: 25px;
   padding-block-end: 25px;
 }
@@ -251,9 +253,8 @@
 }
 
 .card__like-button {
-  padding-inline: 17px;
-  padding-block: 9px;
-  min-inline-size: 130px;
+  padding-inline: 35px;
+  padding-block: 10px;
 }
 
 .button__text {
@@ -269,7 +270,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 50px 103px;
+  padding-block-end: 103px;
 }
 
 .save__button {

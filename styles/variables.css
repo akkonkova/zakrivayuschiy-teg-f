@@ -6,7 +6,7 @@
   --title-font-weight: 700;
   --primary-font-size: 18px;
   --secondary-font-size: 14px;
-  --content-sec-size: clamp(min(100vw,375px), 50vw, 698px);
+  --content-sec-size: clamp(min(100vw,375px), 50vw, 700px);
   --primary-border: 2px solid currentColor;
   --primary-clr: #000;
   --primary-bg-clr: #fff;

@@ -87,7 +87,7 @@
   font-size: var(--secondary-font-size);
   text-transform: uppercase;
   background: transparent;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   min-block-size: 14px;
   will-change: opacity, transform;
@@ -95,38 +95,39 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
+  animation: arrow 0.5s infinite ease-in-out alternate;
   inset-inline-start: 2px;
   inset-block-start: 1px;
-  animation: arrow 0.5s infinite ease-in-out alternate;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus-visible {
   opacity: 0.6;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
   content: '';
   display: block;
   background: var(--primary-clr);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: left center;
   block-size: 2px;
@@ -137,7 +138,7 @@
   display: block;
   opacity: 0.6;
   background: var(--primary-clr);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   transform: scaleX(1);
   block-size: 2px;
 }
@@ -245,23 +246,60 @@
   justify-content: center;
   align-items: center;
   border: var(--primary-border);
-  background: transparent;
+  cursor: pointer;
+}
+
+/* Отдельный стиль для классических/дефолтных на вид кнопок, чтобы не дублировать анимации для разных классов*/
+
+.button__default {
+  position: relative;
+}
+
+.button__default:focus {
+  box-shadow: 2px 2px 0 0 var(--primary-clr);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__default::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: var(--primary-clr);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button__default:hover::after {
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
 }
 
 .card__icon-button {
   border: none;
+  background: transparent;
 }
 
 .card__like-button {
   padding-inline: 35px;
   padding-block: 10px;
+  background: var(--primary-bg-clr);
+  max-inline-size: 130px;
 }
 
 .button__text {
-  color: currentColor;
+  position: relative;
+  z-index: 2;
+  color: var(--mix-mode-clr);
   font-family: var(--accent-font);
   font-size: var(--secondary-font-size);
   line-height: 90%;
+  mix-blend-mode: difference;
 }
 
 /* Стили для секции с кнопкой сохранения*/
@@ -287,8 +325,12 @@
 }
 
 .floppy-icon {
+  position: relative;
+  z-index: 2;
   width: 21px;
   height: 21px;
+  fill: var(--mix-mode-clr);
+  mix-blend-mode: difference;
 }
 
 @media (width <= 375px) {
@@ -297,4 +339,3 @@
     height: 28px;
   }
 }
-

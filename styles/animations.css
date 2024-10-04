@@ -25,4 +25,24 @@
   }
  }
 
- /*Анимация для кнопки like и сохранить на память */
+ /*Анимация для вспышки искр*/
+
+ @keyframes heart-scaling {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+ }
+
+ @keyframes sparks-flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+ }
+
+

@@ -12,6 +12,7 @@
   --primary-bg-clr: #000;
   --mix-mode-clr: #00cc14;
   --label-stroke-clr: #000;
+  --heart-contour: #00cc14;
   --primary-bg-image: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
     linear-gradient(180deg, #007f0c, #004306);
@@ -25,6 +26,7 @@
     --primary-bg-clr: #000;
     --mix-mode-clr: #00cc14;
     --label-stroke-clr: #000;
+    --heart-contour: #00cc14;
     --primary-bg-image: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
       repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
       linear-gradient(180deg, #007f0c, #004306);
@@ -38,6 +40,7 @@
   --primary-bg-clr: #fff;
   --label-stroke-clr: #fff;
   --mix-mode-clr: #fff;
+  --heart-contour: #000;
   --primary-bg-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);

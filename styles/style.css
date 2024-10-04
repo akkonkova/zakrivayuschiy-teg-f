@@ -1,3 +1,4 @@
+/* stylelint-disable property-no-unknown */
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -102,9 +103,10 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
+  /* stylelint-disable-next-line no-unknown-animations */
   animation: arrow 0.5s infinite ease-in-out alternate;
   inset-inline-start: 2px;
-  inset-block-start: 1px;
+  inset-block-start: 0;
 }
 
 .theme-menu__button:hover {
@@ -268,7 +270,7 @@
   left: 0;
   display: block;
   background: var(--primary-clr);
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left center;
   inline-size: 100%;
@@ -281,8 +283,82 @@
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
+  padding-block: 2px;
   background: transparent;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition-duration: fill .1s linear;
+}
+
+/* Стили для анимации сердца в разных состояниях */
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill .3s linear .03s;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill .3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--heart-contour);
+  transition: fill .3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour);
+  transition: fill .3s linear .05s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-clr);
+  transition: fill .3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-clr);
+  transition: fill .3s linear .05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-clr);
+  transition: fill .3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-clr);
+  transition: fill .3s linear .05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-clr);
+  transition: fill .3s linear .06s;
+}
+
+.like-icon.is-liked .heart{
+  animation: heart-scaling .3s 1 ease-in .1s alternate;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks{
+  animation: sparks-flash .3s 1 ease-in .3s;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline:  var( --primary-border);
+  transition: outline 0.3s ease;
 }
 
 .card__like-button {

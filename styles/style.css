@@ -1,3 +1,4 @@
+/* stylelint-disable no-unknown-animations */
 /* stylelint-disable property-no-unknown */
 /* Здесь вы напишете основную часть стилей страницы.
 
@@ -53,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding-block-end: 23px;
+  padding-block-end: 24px;
 }
 
 .header__logo {
@@ -73,14 +74,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 9px;
-  padding-block-end: 20px;
+  gap: 8px;
+  padding-block-end: 22px;
 }
 
 .theme-menu__button {
   position: relative;
   border: none;
-  padding-inline-start: 24px;
+  padding-inline-start: 18px;
   padding-block: 0;
   outline: none;
   color: currentColor;
@@ -104,9 +105,8 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
-  /* stylelint-disable-next-line no-unknown-animations */
   animation: arrow 0.5s infinite ease-in-out alternate;
-  inset-inline-start: 4px;
+  inset-inline-start: -2px;
   inset-block-start: 0;
 }
 
@@ -167,7 +167,7 @@
   display: flex;
   flex-direction: column;
   padding-inline: 10px;
-  padding-block: 5px;
+  padding-block: 4px;
   color: var(--primary-clr);
   font-family: inherit;
   font-weight: var(--title-font-weight);
@@ -179,7 +179,6 @@
   position: relative;
   border-block: var(--primary-border);
   overflow: hidden;
-  /* aspect-ratio: 1 / 1; */
 }
 
 .card__pic {
@@ -219,7 +218,7 @@
   flex-direction: column;
   gap: 28px;
   padding-inline: 25px;
-  padding-block: 25px 22px;
+  padding-block: 26px 24px;
 }
 
 .card__text {
@@ -234,7 +233,8 @@
   justify-content: flex-end;
   align-items: center;
   padding-inline-end: 25px;
-  padding-block-end: 21px;
+  padding-block-end: 25px;
+  gap: 5px;
 }
 
 .button {
@@ -247,17 +247,17 @@
 
 /* Отдельный стиль для классических/дефолтных на вид кнопок, чтобы не дублировать анимации для разных классов*/
 
-.button__default {
+.button_default {
   position: relative;
 }
 
-.button__default:focus {
+.button_default:focus {
   box-shadow: 2px 2px 0 0 var(--primary-clr);
   outline: none;
   transition: box-shadow 0.3s ease;
 }
 
-.button__default::after {
+.button_default::after {
   content: '';
   position: absolute;
   top: 0;
@@ -271,7 +271,7 @@
   block-size: 100%;
 }
 
-.button__default:hover::after {
+.button_default:hover::after {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
@@ -279,13 +279,11 @@
 .card__icon-button {
   border: 2px solid transparent;
   background: transparent;
-  padding-inline: 5px;
-  padding-block: 2px;
 }
 
 .like-icon {
-  width: 39px;
-  height: 36px;
+  width: 38px;
+  height: 34px;
 }
 
 .sparks {
@@ -357,14 +355,15 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: var(--primary-border);
+  border: var(--primary-border);
   transition: outline 0.3s ease;
 }
 
 .card__like-button {
   padding-block: 10px;
   background: var(--primary-bg-clr);
-  min-inline-size: 130px;
+  inline-size: 130px;
+  block-size: 38px;
 }
 
 .button__text {
@@ -377,13 +376,17 @@
   mix-blend-mode: difference;
 }
 
+.button__text_modal {
+  text-transform: uppercase;
+}
+
 /* Стили для секции с кнопкой сохранения*/
 
 .save__button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block-end: 103px;
+  padding-block-end: 101px;
 }
 
 .save__button {
@@ -413,4 +416,59 @@
     width: 28px;
     height: 28px;
   }
+}
+
+/* Стили для модального окна */
+
+.modal-window[open] {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-bg-clr);
+  color: var(--primary-clr);
+  inline-size: clamp(341px, 335.3662px + 1.5023vw, 357px);
+  border: 2px solid var(--primary-clr);
+  padding-inline: 29px;
+  padding-block: 29px;
+}
+
+@media (width <= 375px) {
+  .modal-window[open] {
+    padding-inline: 38px;
+    padding-block: 28px;
+  }
+}
+
+
+
+.modal-window::backdrop {
+  background-color: var(--backdrop-clr);
+  opacity: 0.75;
+}
+
+.modal-window__content {
+  display: flex;
+  gap: 20px;
+  padding-block-end: 30px;
+  white-space: pre-line;
+  align-items: center;
+}
+
+.modal-window__content .floppy-icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal-window__text {
+  color: var(--primary-clr);
+  font-family: var(--accent-font);
+  font-size: var(--secondary-font-size);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.button_modal {
+  padding-block: 11px;
+  padding-inline: 17px;
+  inline-size: 100%;
+  background: var(--primary-bg-clr);
 }

@@ -232,12 +232,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 5px;
   padding-inline-end: 25px;
   padding-block-end: 25px;
-  gap: 5px;
 }
 
+/* Отдельный стиль для классических/дефолтных на вид кнопок, чтобы не дублировать анимации для разных классов*/
+
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,19 +248,16 @@
   cursor: pointer;
 }
 
-/* Отдельный стиль для классических/дефолтных на вид кнопок, чтобы не дублировать анимации для разных классов*/
-
-.button_default {
-  position: relative;
+.button:focus {
+  outline: none;
 }
 
-.button_default:focus {
+.button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--primary-clr);
-  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
-.button_default::after {
+.button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -271,7 +271,7 @@
   block-size: 100%;
 }
 
-.button_default:hover::after {
+.button:hover::after {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
@@ -342,15 +342,15 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-scaling 0.3s 1 ease-in 0.1s alternate;
   transform-origin: center;
+  animation: heart-scaling 0.3s 1 ease-in 0.1s alternate;
 }
 
 .like-icon.is-liked .sparks {
   animation: sparks-flash 0.3s 1 ease-in 0.3s;
 }
 
-.card__icon-button:focus {
+.card__icon-button:focus-visible {
   outline: none;
 }
 
@@ -423,12 +423,12 @@
 .modal-window[open] {
   display: flex;
   flex-direction: column;
-  background: var(--primary-bg-clr);
-  color: var(--primary-clr);
-  inline-size: clamp(341px, 335.3662px + 1.5023vw, 357px);
   border: 2px solid var(--primary-clr);
   padding-inline: 29px;
   padding-block: 29px;
+  color: var(--primary-clr);
+  background: var(--primary-bg-clr);
+  inline-size: clamp(341px, 335.3662px + 1.5023vw, 357px);
 }
 
 @media (width <= 375px) {
@@ -438,19 +438,17 @@
   }
 }
 
-
-
 .modal-window::backdrop {
-  background-color: var(--backdrop-clr);
   opacity: 0.75;
+  background-color: var(--backdrop-clr);
 }
 
 .modal-window__content {
   display: flex;
+  align-items: center;
   gap: 20px;
   padding-block-end: 30px;
   white-space: pre-line;
-  align-items: center;
 }
 
 .modal-window__content .floppy-icon {
@@ -467,8 +465,8 @@
 }
 
 .button_modal {
-  padding-block: 11px;
   padding-inline: 17px;
-  inline-size: 100%;
+  padding-block: 11px;
   background: var(--primary-bg-clr);
+  inline-size: 100%;
 }

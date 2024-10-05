@@ -27,6 +27,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--reg-font-weight);
+  overscroll-behavior: none;
 }
 
 .content-section {
@@ -52,7 +53,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding-block-end: 24px;
+  padding-block-end: 23px;
 }
 
 .header__logo {
@@ -72,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 9px;
   padding-block-end: 20px;
 }
 
@@ -105,7 +106,7 @@
   position: absolute;
   /* stylelint-disable-next-line no-unknown-animations */
   animation: arrow 0.5s infinite ease-in-out alternate;
-  inset-inline-start: 2px;
+  inset-inline-start: 4px;
   inset-block-start: 0;
 }
 
@@ -216,9 +217,9 @@
 .card__text-container {
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 28px;
   padding-inline: 25px;
-  padding-block: 26px;
+  padding-block: 25px 22px;
 }
 
 .card__text {
@@ -232,15 +233,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 6px;
   padding-inline-end: 25px;
-  padding-block-end: 25px;
-}
-
-.like-icon {
-  display: block;
-  inline-size: 27px;
-  block-size: 24px;
+  padding-block-end: 21px;
 }
 
 .button {
@@ -284,8 +278,14 @@
 
 .card__icon-button {
   border: 2px solid transparent;
-  padding-block: 2px;
   background: transparent;
+  padding-inline: 5px;
+  padding-block: 2px;
+}
+
+.like-icon {
+  width: 39px;
+  height: 36px;
 }
 
 .sparks {
@@ -293,63 +293,63 @@
 }
 
 .contour {
-  transition-duration: fill .1s linear;
+  transition-duration: fill 0.1s linear;
 }
 
 /* Стили для анимации сердца в разных состояниях */
 
 .like-icon .core {
   fill: transparent;
-  transition: fill .3s linear .03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon .main-body {
   fill: transparent;
-  transition: fill .3s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .core {
   fill: var(--heart-contour);
-  transition: fill .3s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--heart-contour);
-  transition: fill .3s linear .05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
   fill: var(--heart-clr);
-  transition: fill .3s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
   fill: var(--heart-clr);
-  transition: fill .3s linear .05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-clr);
-  transition: fill .3s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-clr);
-  transition: fill .3s linear .05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-clr);
-  transition: fill .3s linear .06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
-.like-icon.is-liked .heart{
-  animation: heart-scaling .3s 1 ease-in .1s alternate;
+.like-icon.is-liked .heart {
+  animation: heart-scaling 0.3s 1 ease-in 0.1s alternate;
   transform-origin: center;
 }
 
-.like-icon.is-liked .sparks{
-  animation: sparks-flash .3s 1 ease-in .3s;
+.like-icon.is-liked .sparks {
+  animation: sparks-flash 0.3s 1 ease-in 0.3s;
 }
 
 .card__icon-button:focus {
@@ -357,15 +357,14 @@
 }
 
 .card__icon-button:focus-visible {
-  outline:  var( --primary-border);
+  outline: var(--primary-border);
   transition: outline 0.3s ease;
 }
 
 .card__like-button {
-  padding-inline: 35px;
   padding-block: 10px;
   background: var(--primary-bg-clr);
-  max-inline-size: 130px;
+  min-inline-size: 130px;
 }
 
 .button__text {

@@ -98,7 +98,6 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
@@ -112,38 +111,30 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus-visible {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
   content: '';
   display: block;
   background: var(--primary-clr);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   transform: scaleX(0);
   transform-origin: left center;
   block-size: 2px;
 }
 
 .theme-menu__button:focus-visible::after {
-  content: '';
-  display: block;
   opacity: 0.6;
-  background: var(--primary-clr);
-  transition: transform 0.3s ease;
   transform: scaleX(1);
-  block-size: 2px;
 }
 
 /* Стили для секции с карточками / статьями */
@@ -247,6 +238,7 @@
   align-items: center;
   border: var(--primary-border);
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .button:focus {
@@ -255,7 +247,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--primary-clr);
-  transition: box-shadow 0.3s ease;
 }
 
 .button::after {
@@ -273,7 +264,6 @@
 }
 
 .button:hover::after {
-  transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
 
@@ -282,6 +272,12 @@
 .card__icon-button {
   border: 2px solid transparent;
   background: transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: var(--primary-border);
+  outline: none;
 }
 
 .like-icon {
@@ -351,12 +347,6 @@
 
 .like-icon.is-liked .sparks {
   animation: sparks-flash 0.3s 1 ease-in 0.3s;
-}
-
-.card__icon-button:focus-visible {
-  border: var(--primary-border);
-  outline: none;
-  transition: outline 0.3s ease;
 }
 
 .card__like-button {

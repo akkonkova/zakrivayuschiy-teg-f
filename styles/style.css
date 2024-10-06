@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: 100px;
+  margin-block-start: 98px;
   border: var(--primary-border);
   padding-block-start: clamp(120px, 114.3662px + 1.5023vw, 136px);
   background: var(--primary-bg-clr);
@@ -90,7 +90,7 @@
   font-size: var(--secondary-font-size);
   text-transform: uppercase;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
   min-block-size: 14px;
   will-change: opacity, transform;
@@ -234,7 +234,7 @@
   align-items: center;
   gap: 5px;
   padding-inline-end: 25px;
-  padding-block-end: 25px;
+  padding-block-end: 22px;
 }
 
 /* Отдельный стиль для классических/дефолтных на вид кнопок, чтобы не дублировать анимации для разных классов*/
@@ -264,7 +264,7 @@
   left: 0;
   display: block;
   background: var(--primary-clr);
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left center;
   inline-size: 100%;
@@ -275,6 +275,8 @@
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
+
+/* Стили для кнопки-иконки в виде сердца */
 
 .card__icon-button {
   border: 2px solid transparent;
@@ -291,7 +293,7 @@
 }
 
 .contour {
-  transition-duration: fill 0.1s linear;
+  transition: fill 0.1s linear;
 }
 
 /* Стили для анимации сердца в разных состояниях */
@@ -351,11 +353,8 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-}
-
-.card__icon-button:focus-visible {
   border: var(--primary-border);
+  outline: none;
   transition: outline 0.3s ease;
 }
 
@@ -469,4 +468,38 @@
   padding-block: 11px;
   background: var(--primary-bg-clr);
   inline-size: 100%;
+}
+
+/* Стили для фильтров на картинках */
+
+.card__pic_bright {
+  filter: brightness(150%);
+}
+
+.card__pic_invert {
+  filter: invert(90%);
+}
+
+.card__pic_contrast {
+  filter: contrast(200%);
+}
+
+.card__pic_sepia {
+  filter: sepia(100%);
+}
+
+.card__pic_hue {
+  filter: hue-rotate(90deg);
+}
+
+.card__pic_blur {
+  filter: blur(5px);
+}
+
+.card__pic_gray {
+  filter: grayscale(80%);
+}
+
+.card__pic_mix {
+  filter: brightness(150%) hue-rotate(180deg) invert(150%);
 }

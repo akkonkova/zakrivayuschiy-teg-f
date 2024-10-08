@@ -187,7 +187,7 @@
   color: var(--primary-clr);
   font-family: var(--accent-font);
   font-size: var(--secondary-font-size);
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-shadow: -1px 0 var(--label-stroke-clr), 0 1px var(--label-stroke-clr),
     1px 0 var(--label-stroke-clr), 0 -1px var(--label-stroke-clr);
   inset-inline-end: clamp(11px, 6.0704px + 1.3146vw, 25px);

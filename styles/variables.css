@@ -1,1 +1,21 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --primary-font: 'Inter-Variable';
+  --accent-font: 'PressStart2P', fantasy;
+  --reg-font-weight: 400;
+  --title-font-weight: 700;
+  --primary-font-size: 18px;
+  --secondary-font-size: 14px;
+  --content-sec-size: clamp(min(100vw,375px), 50vw, 700px);
+  --primary-border: 2px solid currentColor;
+  --primary-clr: #000;
+  --primary-bg-clr: #fff;
+  --label-stroke-clr: #fff;
+  --mix-mode-clr: #fff;
+  --heart-contour: #000;
+  --heart-clr: #f00;
+  --backdrop-clr: #000;
+  --primary-bg-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
+}
